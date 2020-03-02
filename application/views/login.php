@@ -44,20 +44,20 @@
 										<h1 class="h4 text-gray-900 mb-4">Login HiPOS</h1>
 
 									</div>
-									<form class="user" method="post" action="<?= base_url('administrator/auth/proses_login')?>">
+									<form class="user" method="post" action="<?= site_url('auth/process')?>">
 										<div class="form-group">
 											<input type="text" class="form-control form-control-user" id="username"
-												aria-describedby="username" placeholder="Username" name="username">
+												aria-describedby="username" placeholder="Username" name="username" required>
 
 										</div>
 
 										<div class="form-group">
 											<input type="password" class="form-control form-control-user" id="password" placeholder="Password"
-												name="password">
+												name="password" required>
 
 										</div>
 
-										<button class="btn btn-primary btn-user btn-block">Masuk</button>
+										<button class="btn btn-primary btn-user btn-block" name="login">Masuk</button>
 
 									</form>
 									<hr>

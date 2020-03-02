@@ -169,7 +169,7 @@
 								</button>
 							</div>
 						</div> -->
-						<div>Blank Page</div>
+						<div>Applikasi Point Of Sales</div>
 					</form>
 
 					<!-- Topbar Navbar -->
