@@ -1,9 +1,9 @@
 <div class="container-fluid">
 	<div class="h3 mb-2 text-gray-800">
-		Judul Content
+		List Data Users
 	</div>
 	<div class="mb-4">
-		Content
+		Data User Administrator dan Kasir HiPOS.
 	</div>
 
 	<div class="card shadow mb-4">
