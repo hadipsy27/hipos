@@ -27,10 +27,15 @@ class User_m extends CI_Model{
 		$params['name'] = $post['fullname'];
 		$params['username'] = $post['username'];
 		$params['password'] = sha1($post['password']);
-		$params['address'] = $post['address'] != "" ? $post['addess'] : null;
+		$params['address'] = $post['address'] != "" ? $post['address'] : null;
 		$params['level'] = $post['level'];
 		// user itu nama table di database
 		$this->db->insert('user', $params);
+	}
+
+	public function del($id){
+		$this->db->where('user_id', $id);
+		$this->db->delete('user');
 	}
 
 }

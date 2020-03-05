@@ -39,7 +39,16 @@ class User extends CI_Controller{
 			echo"<script>window.location='".site_url('user')."'</script>";
 			
 		}
+	}
 
-		
+	public function del(){
+		// user_id ini dari name di form input hidden button delete 
+		$id = $this->input->post('user_id');
+		$this->user_m->del($id);
+
+		if ($this->db->affected_rows() > 0) {
+			echo "<script> alert('Data Berhasil dihapus!') </script>";
+		}
+		echo "<script> window.location='".site_url('user')."' </script>";
 	}
 }

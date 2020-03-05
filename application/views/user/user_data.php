@@ -41,14 +41,16 @@
 						<td><?= $data->address ?></td>
 						<td><?= $data->level == 1 ? "Admin" : "Kasir" ?></td>
 						<td width="20px">
-							<a href="<?= site_url('user/edit') ?>">
+							<a href="<?= site_url('user/edit/'.$data->user_id) ?>">
 								<div class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></div>
 							</a>
 						</td>
-						<td onclick="javascript: return confirm('Anda yakin untuk hapus?')" width=" 20px">
-							<a href="<?= site_url('user/delete') ?>">
-								<div class="btn btn-sm btn-danger"><i class="fa fa-trash-alt"></i></div>
-							</a>
+						<td width="20px">
+							<form action="<?= site_url('user/del') ?>" method="post">
+								<input type="hidden" name="user_id" value="<?= $data->user_id ?>">
+								<button onclick="return confirm('Yakin untuk menghapus data?')" class="btn btn-sm btn-danger"><i
+										class="fa fa-trash-alt"></i></button>
+							</form>
 						</td>
 					</tr>
 
