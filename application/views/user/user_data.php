@@ -46,7 +46,7 @@
 							</a>
 						</td>
 						<td width="20px">
-							<form action="<?= site_url('user/del') ?>" method="post">
+							<form action="<?= site_url('user/delete') ?>" method="post">
 								<input type="hidden" name="user_id" value="<?= $data->user_id ?>">
 								<button onclick="return confirm('Yakin untuk menghapus data?')" class="btn btn-sm btn-danger"><i
 										class="fa fa-trash-alt"></i></button>
