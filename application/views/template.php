@@ -39,7 +39,12 @@
 			</a>
 
 			<!-- Divider -->
-			<hr class="sidebar-divider my-0">
+			<hr class="sidebar-divider">
+
+			<!-- Heading -->
+			<div class="sidebar-heading">
+				Istimewah
+			</div>
 
 			<!-- Nav Item - Dashboard -->
 			<li class="nav-item active">
@@ -48,12 +53,26 @@
 					<span>Dashboard</span></a>
 			</li>
 
+			<!-- Nav Item - Charts -->
+			<li class="nav-item">
+				<a class="nav-link" href="<?= site_url('supplier') ?>">
+					<i class="fas fa-fw fa-chart-area"></i>
+					<span>Suppliers</span></a>
+			</li>
+
+			<!-- Nav Item - Charts -->
+			<li class="nav-item">
+				<a class="nav-link" href="charts.html">
+					<i class="fas fa-fw fa-chart-area"></i>
+					<span>Costumers</span></a>
+			</li>
+
 			<!-- Divider -->
 			<hr class="sidebar-divider">
 
 			<!-- Heading -->
 			<div class="sidebar-heading">
-				Interface
+				Powerfull
 			</div>
 
 			<!-- Nav Item - Pages Collapse Menu -->
@@ -61,7 +80,7 @@
 				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
 					aria-controls="collapseTwo">
 					<i class="fas fa-fw fa-cog"></i>
-					<span>Components</span>
+					<span>Products</span>
 				</a>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
@@ -77,7 +96,7 @@
 				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
 					aria-expanded="true" aria-controls="collapseUtilities">
 					<i class="fas fa-fw fa-wrench"></i>
-					<span>Utilities</span>
+					<span>Transactions</span>
 				</a>
 				<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
@@ -90,20 +109,12 @@
 				</div>
 			</li>
 
-			<!-- Divider -->
-			<hr class="sidebar-divider">
-
-			<!-- Heading -->
-			<div class="sidebar-heading">
-				Addons
-			</div>
-
 			<!-- Nav Item - Pages Collapse Menu -->
 			<li class="nav-item">
-				<a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
+				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
 					aria-controls="collapsePages">
 					<i class="fas fa-fw fa-folder"></i>
-					<span>Pages</span>
+					<span>Products</span>
 				</a>
 				<div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
@@ -117,13 +128,6 @@
 						<a class="collapse-item" href="blank.html">Blank Page</a>
 					</div>
 				</div>
-			</li>
-
-			<!-- Nav Item - Charts -->
-			<li class="nav-item">
-				<a class="nav-link" href="charts.html">
-					<i class="fas fa-fw fa-chart-area"></i>
-					<span>Charts</span></a>
 			</li>
 
 			<?php if($this->fungsi->user_login()->level == 1 ) { ?>
