@@ -126,7 +126,7 @@
 					<span>Charts</span></a>
 			</li>
 
-			<?php if($this->session->userdata('level') == 1 ) { ?>
+			<?php if($this->fungsi->user_login()->level == 1 ) { ?>
 			<!-- Nav Item - Users -->
 			<li class="nav-item">
 				<a class="nav-link" href="<?= site_url('user') ?>">
