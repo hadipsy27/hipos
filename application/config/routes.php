@@ -52,3 +52,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'dashboard';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+// Membuat costume route sendiri
+// cutomer itu nama link yg di tuju, pelanggan itu nama controller yg di panggil yakni index, function index tidak perlu di tampilkan
+$route['customer'] = 'pelanggan';
+$route['customer/add'] = 'pelanggan/add';
+$route['customer/process'] = 'pelanggan/process';
+// (:num) merupakan tipe data number, $1 adalah parameter dari (:num)
+$route['customer/edit/(:num)'] = 'pelanggan/edit/$1';
+$route['customer/delete/(:num)'] = 'pelanggan/delete/$1';
