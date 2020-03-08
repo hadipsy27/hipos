@@ -11,7 +11,7 @@
 			<h6 class="m-0 font-weight-bold text-primary">Data Suppliers</h6>
 			<div class=" pull-right">
 				<a href="<?= site_url('supplier/add') ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-					<i class="fa fa-user-plus"></i> Tambah Suppliler
+					<i class="fa fa-plus"></i> Tambah Suppliler
 				</a>
 			</div>
 		</div>
@@ -41,7 +41,7 @@
 						<td><?= $data->address ?></td>
 						<td><?= $data->description ?></td>
 						<td width="20px">
-							<a href="<?= site_url() ?>">
+							<a href="<?= site_url('supplier/edit/'.$data->supplier_id) ?>">
 								<div class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></div>
 							</a>
 						</td>
