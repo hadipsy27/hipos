@@ -91,7 +91,8 @@ $halaman = $this->uri->segment(1);
 							href="<?= site_url('category') ?>">Category</a>
 						<a class="collapse-item <?= $this->uri->segment(1) == 'unit' ? "active" : '' ?>"
 							href="<?= site_url('unit') ?>">Units</a>
-						<a class="collapse-item" href="cards.html">Items</a>
+						<a class="collapse-item <?= $this->uri->segment(1) == 'item' ? "active" : '' ?>"
+							href="<?= site_url('item') ?>">Items</a>
 					</div>
 				</div>
 			</li>
