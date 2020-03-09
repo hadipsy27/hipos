@@ -15,46 +15,44 @@
 				</a>
 			</div>
 		</div>
-		<div class="card-body table-responsive">
-			<?php // print_r($row->result()) ?>
-			<table class="table table-hover table-striped table-bordered">
-				<thead>
-					<tr>
-						<th width="10px">No</th>
-						<th>Name</th>
-						<th>Phone</th>
-						<th>Address</th>
-						<th>Description</th>
-						<th colspan="2" style="text-align: center;">Aksi</th>
-					</tr>
-				</thead>
+		<div class="card-body">
+			<div class="table-responsive">
+				<table class="table table-hover table-striped table-bordered" id="dataTable">
+					<thead>
+						<tr>
+							<th width="10px">No</th>
+							<th>Name</th>
+							<th>Phone</th>
+							<th>Address</th>
+							<th>Description</th>
+							<th style="text-align: center;">Aksi</th>
+						</tr>
+					</thead>
 
-				<tbody>
-					<tr>
+					<tbody>
 						<?php 
 						$no = 1;
 						foreach($row->result() as $key => $data) : ?>
+						<tr>
+							<td style="text-align: center;"><?= $no++ ?>.</td>
+							<td><?= $data->name ?></td>
+							<td><?= $data->phone ?></td>
+							<td><?= $data->address ?></td>
+							<td><?= $data->description ?></td>
+							<td class="text-center" width="75px">
+								<a href="<?= site_url('supplier/edit/'.$data->supplier_id) ?>">
+									<div class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></div>
+								</a>
+								<a href="<?= site_url('supplier/delete/'.$data->supplier_id) ?>"
+									onclick="return confirm('Yakin menghapus data?')" class="btn btn-sm btn-danger"><i
+										class="fa fa-trash"></i></a>
+							</td>
+						</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
+			</div>
 
-						<td style="text-align: center;"><?= $no++ ?>.</td>
-						<td><?= $data->name ?></td>
-						<td><?= $data->phone ?></td>
-						<td><?= $data->address ?></td>
-						<td><?= $data->description ?></td>
-						<td width="20px">
-							<a href="<?= site_url('supplier/edit/'.$data->supplier_id) ?>">
-								<div class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></div>
-							</a>
-						</td>
-						<td width="20px">
-							<a href="<?= site_url('supplier/delete/'.$data->supplier_id) ?>"
-								onclick="return confirm('Yakin menghapus data?')" class="btn btn-sm btn-danger"><i
-									class="fa fa-trash"></i></a>
-						</td>
-					</tr>
-
-					<?php endforeach; ?>
-				</tbody>
-			</table>
 		</div>
 
 	</div>

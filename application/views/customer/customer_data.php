@@ -14,46 +14,43 @@
 				</a>
 			</div>
 		</div>
-		<div class="card-body table-responsive">
+		<div class="card-body">
 			<?php // print_r($row->result()) ?>
-			<table class="table table-hover table-striped table-bordered">
-				<thead>
-					<tr>
-						<th width="10px">No</th>
-						<th>Name</th>
-						<th>Jenis Kelamin</th>
-						<th>Phone</th>
-						<th>Address</th>
-						<th colspan="2" style="text-align: center;">Aksi</th>
-					</tr>
-				</thead>
-
-				<tbody>
-					<tr>
+			<div class="table-responsive">
+				<table class="table table-hover table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
+					<thead>
+						<tr>
+							<th width="10px">No</th>
+							<th>Name</th>
+							<th>Jenis Kelamin</th>
+							<th>Phone</th>
+							<th>Address</th>
+							<th class="text-center">Aksi</th>
+						</tr>
+					</thead>
+					<tbody>
 						<?php 
 						$no = 1;
 						foreach($row->result() as $key => $data) : ?>
-
-						<td style="text-align: center;"><?= $no++ ?>.</td>
-						<td><?= $data->name ?></td>
-						<td><?= $data->gender ?></td>
-						<td><?= $data->phone ?></td>
-						<td><?= $data->address ?></td>
-						<td width="20px">
-							<a href="<?= site_url('customer/edit/'.$data->customer_id) ?>">
-								<div class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></div>
-							</a>
-						</td>
-						<td width="20px">
-							<a href="<?= site_url('customer/delete/'.$data->customer_id) ?>"
-								onclick="return confirm('Yakin menghapus data?')" class="btn btn-sm btn-danger"><i
-									class="fa fa-trash"></i></a>
-						</td>
-					</tr>
-
-					<?php endforeach; ?>
-				</tbody>
-			</table>
+						<tr>
+							<td style="text-align: center;"><?= $no++ ?>.</td>
+							<td><?= $data->name ?></td>
+							<td><?= $data->gender ?></td>
+							<td><?= $data->phone ?></td>
+							<td><?= $data->address ?></td>
+							<td class="text-center" width="75px">
+								<a href="<?= site_url('customer/edit/'.$data->customer_id) ?>">
+									<div class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></div>
+								</a>
+								<a href="<?= site_url('customer/delete/'.$data->customer_id) ?>"
+									onclick="return confirm('Yakin menghapus data?')" class="btn btn-sm btn-danger"><i
+										class="fa fa-trash"></i></a>
+							</td>
+						</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
+			</div>
 		</div>
 
 	</div>

@@ -19,12 +19,12 @@
 		</div>
 		<div class="card-body table-responsive">
 			<?php // print_r($row->result()) ?>
-			<table class="table table-hover table-striped table-bordered">
+			<table class="table table-hover table-striped table-bordered" id="dataTable">
 				<thead>
 					<tr>
 						<th width="100px" class="text-center">No</th>
 						<th>Name</th>
-						<th colspan="2" style="text-align: center;">Aksi</th>
+						<th class="text-center">Aksi</th>
 					</tr>
 				</thead>
 
@@ -36,12 +36,11 @@
 
 						<td style="text-align: center;"><?= $no++ ?>.</td>
 						<td><?= $data->name ?></td>
-						<td width="150px">
+						<td class="text-center" width="175px">
 							<a href="<?= site_url('category/edit/'.$data->category_id) ?>">
 								<div class="btn btn-sm btn-primary"><i class="fa fa-edit"></i> Update</div>
 							</a>
-						</td>
-						<td width="150px">
+
 							<a href="<?= site_url('category/delete/'.$data->category_id) ?>"
 								onclick="return confirm('Yakin menghapus data?')" class="btn btn-sm btn-danger"><i
 									class="fa fa-trash"></i> Delete</a>

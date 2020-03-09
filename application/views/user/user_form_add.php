@@ -1,5 +1,5 @@
 <div class="container-fluid">
-	<div class="h3 mb-4 text-gray-800">
+	<div class="h3 mb-3 text-gray-800">
 		Form Tambah User
 	</div>
 
@@ -55,7 +55,6 @@
 						</select>
 						<?= form_error('level','<div class="text-danger small ml-2 mt-1">','</div>') ?> </div>
 				</div>
-
 				<div class="form-group">
 					<button class="btn btn-success shadow-lg"><i class="fa fa-paper-plane"></i> Simpan</button>
 					<button class="btn btn-secondary"> Reset</button>

@@ -17,7 +17,7 @@
 		</div>
 		<div class="card-body table-responsive">
 			<?php // print_r($row->result()) ?>
-			<table class="table table-hover table-striped table-bordered">
+			<table class="table table-hover table-striped table-bordered" id="dataTable">
 				<thead>
 					<tr>
 						<th width="10px">No</th>
@@ -25,32 +25,33 @@
 						<th>Name</th>
 						<th>Address</th>
 						<th>Level</th>
-						<th colspan="2" style="text-align: center;">Aksi</th>
+						<th style="text-align: center; width: 75px;">Aksi</th>
 					</tr>
 				</thead>
 
 				<tbody>
-					<tr>
-						<?php 
+					<?php 
 						$no = 1;
 						foreach($row->result() as $key => $data) : ?>
-
+					<tr>
 						<td style="text-align: center;"><?= $no++ ?></td>
 						<td><?= $data->username ?></td>
 						<td><?= $data->name ?></td>
 						<td><?= $data->address ?></td>
 						<td><?= $data->level == 1 ? "Admin" : "Kasir" ?></td>
-						<td width="20px">
-							<a href="<?= site_url('user/edit/'.$data->user_id) ?>">
-								<div class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></div>
-							</a>
-						</td>
-						<td width="20px">
-							<form action="<?= site_url('user/delete') ?>" method="post">
-								<input type="hidden" name="user_id" value="<?= $data->user_id ?>">
-								<button onclick="return confirm('Yakin untuk menghapus data?')" class="btn btn-sm btn-danger"><i
-										class="fa fa-trash-alt"></i></button>
-							</form>
+						<td class="row">
+							<div class="col-6">
+								<a href="<?= site_url('user/edit/'.$data->user_id) ?>">
+									<div class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></div>
+								</a>
+							</div>
+							<div class="col-6">
+								<form action="<?= site_url('user/delete') ?>" method="post">
+									<input type="hidden" name="user_id" value="<?= $data->user_id ?>">
+									<button onclick="return confirm('Yakin untuk menghapus data?')" class="btn btn-sm btn-danger"><i
+											class="fa fa-trash-alt"></i></button>
+								</form>
+							</div>
 						</td>
 					</tr>
 
