@@ -48,7 +48,7 @@ $halaman = $this->uri->segment(1);
 
 			<!-- Heading -->
 			<div class="sidebar-heading">
-				Main Navigatin
+				Main Navigation
 			</div>
 
 			<!-- Nav Item - Dashboard -->
@@ -81,9 +81,10 @@ $halaman = $this->uri->segment(1);
 				</a>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-						<h6 class="collapse-header">Products Components:</h6>
-						<a class="collapse-item" href="buttons.html">Buttons</a>
-						<a class="collapse-item" href="cards.html">Cards</a>
+						<h6 class="collapse-header">Products Submenu:</h6>
+						<a class="collapse-item" href="<?= site_url('category') ?>">Category</a>
+						<a class="collapse-item" href="<?= site_url('unit') ?>">Units</a>
+						<a class="collapse-item" href="cards.html">Items</a>
 					</div>
 				</div>
 			</li>
@@ -127,6 +128,7 @@ $halaman = $this->uri->segment(1);
 				</div>
 			</li>
 
+			<?php if($this->fungsi->user_login()->level == 1 ) { ?>
 			<!-- Divider -->
 			<hr class="sidebar-divider">
 
@@ -135,7 +137,6 @@ $halaman = $this->uri->segment(1);
 				Settings
 			</div>
 
-			<?php if($this->fungsi->user_login()->level == 1 ) { ?>
 			<!-- Nav Item - Users -->
 			<li class="nav-item <?= ($halaman == 'user' ? "active" : "") ?>">
 				<a class="nav-link" href="<?= site_url('user') ?>">
@@ -171,7 +172,7 @@ $halaman = $this->uri->segment(1);
 
 					<!-- Username -->
 					<div class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100">
-						<h5><?= ucfirst($this->fungsi->user_login()->username) ?></h5>
+						<h5><?= ucfirst($this->fungsi->user_login()->level == 1 ? "Admin" : "Kasir") ?></h5>
 					</div>
 
 					<!-- Topbar Navbar -->
