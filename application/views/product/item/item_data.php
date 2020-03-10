@@ -21,7 +21,7 @@
 			<table class="table table-hover table-striped table-bordered" id="dataTable">
 				<thead>
 					<tr>
-						<th width="100px" class="text-center">No</th>
+						<th width="30px">No</th>
 						<th>Barcode</th>
 						<th>Name</th>
 						<th class="text-center">Aksi</th>

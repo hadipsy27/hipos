@@ -51,11 +51,21 @@ class item extends CI_Controller{
 		$query = $this->item_m->get($id);
 		if ($query->num_rows() > 0) {
 			$item = $query->row();
+			$query_category = $this->category_m->get();
+
+			$query_unit = $this->unit_m->get();
+			$unit[null] = '- Pilih -';
+			foreach($query_unit->result() as $unt){
+				$unit[$unt->unit_id] = $unt->name;
+			}
+			
 			$data = array(
 				'page' => 'edit',
-				'row' => $item
+				'row'  => $item,
+				'category' => $query_category, 
+				'unit' => $unit, 'selectedunit' => $item->unit_id, 
 			);
-			$this->template->load('template', 'product/item/item_form', $data);
+			$this->template->load('template','product/item/item_form', $data);
 		} else {
 			echo "<script> alert('Data Tidak ditemukan!');";
 				echo"window.location='".site_url('item')."'</script>";
