@@ -1,5 +1,5 @@
 <?php
-class item extends CI_Controller{
+class Item extends CI_Controller{
 	function __construct(){
 		
 		parent::__construct();
@@ -24,6 +24,7 @@ class item extends CI_Controller{
 
 	public function add(){
 		$item = new stdClass();
+		$item->category_id = null;
 		$item->item_id = null;
 		$item->barcode = null;
 		$item->name = null;

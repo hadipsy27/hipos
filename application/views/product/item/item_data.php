@@ -45,13 +45,13 @@
 						<td><?= $data->unit_name ?></td>
 						<td><?= $data->price ?></td>
 						<td><?= $data->stock ?></td>
-						<td class="text-center" width="175px">
+						<td class="text-center" width="75px">
 							<a href="<?= site_url('item/edit/'.$data->item_id) ?>">
-								<div class="btn btn-sm btn-primary"><i class="fa fa-edit"></i> Update</div>
+								<div class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></div>
 							</a>
 
 							<a href="<?= site_url('item/delete/'.$data->item_id) ?>" onclick="return confirm('Yakin menghapus data?')"
-								class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Delete</a>
+								class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
 						</td>
 					</tr>
 

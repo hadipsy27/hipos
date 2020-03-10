@@ -30,9 +30,10 @@
 					<div class="col-10">
 						<select name="category" class="form-control">
 							<option value="">-- Pilih --</option>
-							<?php foreach($category->result() as $data) { ?>
+							<?php foreach($category->result() as $key => $data) { ?>
 							<option value="<?= $data->category_id ?>"
-								<?= $data->category_id == $row->category_id ? "selected" : null ?>><?= $data->name ?></option>
+								<?= $data->category_id == $row->category_id ? "selected" : null ?>><?= $data->name ?>
+							</option>
 							<?php } ?>
 						</select>
 					</div>
