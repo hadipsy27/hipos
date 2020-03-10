@@ -3,6 +3,8 @@
 		Items Form <?= ucfirst($page) ?>
 	</div>
 
+	<?php $this->view('messages') ?>
+
 	<div class="card shadow mb-2">
 		<div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
 			<h6 class="m-0 font-weight-bold text-primary"><?= ucfirst($page) ?> Data Item</h6>
@@ -28,7 +30,7 @@
 				<div class="form-group row">
 					<div class="col-2"><label>Category *</label></div>
 					<div class="col-10">
-						<select name="category" class="form-control">
+						<select name="category" class="form-control" required>
 							<option value="">-- Pilih --</option>
 							<?php foreach($category->result() as $key => $data) { ?>
 							<option value="<?= $data->category_id ?>"

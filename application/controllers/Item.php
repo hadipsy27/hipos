@@ -76,9 +76,20 @@ class Item extends CI_Controller{
 	public function process(){
 		$post = $this->input->post(null, TRUE);
 		if (isset($_POST['add'])) {
-			$this->item_m->add($post);
+			if ($this->item_m->check_barcode($post['barcode'])->num_rows() > 0) {
+				$this->session->set_flashdata('error',"Barcode $post[barcode] sudah dipakai barang lain");
+				redirect('item/add');
+			} else {
+				$this->item_m->add($post);
+			}
 		} else if (isset($_POST['edit'])) {
+			// $post['name_id'] parameter name_id dari form input sesuai name dari form nya
+			if ($this->item_m->check_barcode($post['barcode'], $post['id'])->num_rows() > 0) {
+				$this->session->set_flashdata('error',"Barcode $post[barcode] sudah dipakai barang lain");
+				redirect('item/edit/'.$post['id']);
+			} else {
 			$this->item_m->edit($post);
+			}
 		}
 		if ($this->db->affected_rows() > 0) {
 			// session di ambil dari autoload libraries yg sudah di beri array session
