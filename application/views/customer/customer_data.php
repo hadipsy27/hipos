@@ -35,7 +35,7 @@
 						<tr>
 							<td style="text-align: center;"><?= $no++ ?>.</td>
 							<td><?= $data->name ?></td>
-							<td><?= $data->gender ?></td>
+							<td><?= $data->gender == 'L' ? "Laki-Laki" : "Perempuan" ?></td>
 							<td><?= $data->phone ?></td>
 							<td><?= $data->address ?></td>
 							<td class="text-center" width="75px">

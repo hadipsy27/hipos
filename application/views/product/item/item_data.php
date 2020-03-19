@@ -28,6 +28,7 @@
 						<th>Unit</th>
 						<th>Price</th>
 						<th>Stock</th>
+						<th>Image</th>
 						<th class="text-center">Aksi</th>
 					</tr>
 				</thead>
@@ -45,6 +46,11 @@
 						<td><?= $data->unit_name ?></td>
 						<td><?= $data->price ?></td>
 						<td><?= $data->stock ?></td>
+						<td>
+							<?php if($data->image != null) { ?>
+							<img src="<?= base_url('uploads/product/'.$data->image) ?>" style="width: 100px">
+							<?php } ?>
+						</td>
 						<td class="text-center" width="75px">
 							<a href="<?= site_url('item/edit/'.$data->item_id) ?>">
 								<div class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></div>

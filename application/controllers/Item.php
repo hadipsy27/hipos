@@ -80,7 +80,34 @@ class Item extends CI_Controller{
 				$this->session->set_flashdata('error',"Barcode $post[barcode] sudah dipakai barang lain");
 				redirect('item/add');
 			} else {
-				$this->item_m->add($post);
+				$config['upload_path']          = './uploads/product/';
+				$config['allowed_types']        = 'pdf|jpg|png|jpeg|zip';
+				$config['max_size']             = 2048;
+				$config['file_name']             = 'item-'.date('ymd').'-'.substr(md5(rand()),0,10);
+				$this->load->library('upload', $config);
+				
+				// var_dump($config['file_name']); die();
+				if(@$_FILES['image']['name'] != null){
+					if($this->upload->do_upload('image')){
+						$post['image'] = $this->upload->data('file_name');
+						$this->item_m->add($post);
+						if ($this->db->affected_rows() > 0) {
+							$this->session->set_flashdata('success','Data berhasil disimpan');
+						}
+						redirect('item');
+					} else {
+						$error = $this->upload->display_errors();
+						$this->session->set_flashdata('error',$error);
+						redirect('item');
+					}
+				} else {
+					$post['image'] = null;
+						$this->item_m->add($post);
+						if ($this->db->affected_rows() > 0) {
+							$this->session->set_flashdata('success','Data berhasil disimpan');
+						}
+						redirect('item');
+				}
 			}
 		} else if (isset($_POST['edit'])) {
 			// $post['name_id'] parameter name_id dari form input sesuai name dari form nya
